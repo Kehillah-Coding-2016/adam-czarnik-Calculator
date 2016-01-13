@@ -18,6 +18,7 @@ def print_slow(str):
     for letter in str:
         print(letter)
         time.sleep(.1)
+#i didnt end up using this but i might add it in later so I left it
 
 while x < 1:
     #print(' ')
@@ -31,6 +32,17 @@ while x < 1:
     print(bcolors.BOLD + '6.' + bcolors.ENDC + ' Lets have some fun with a math pun!')
     print(' ')
     #print(' ')
+    
+    def errormessage():
+        print(bcolors.FAIL + 'Because you did something wrong, this program will self-destruct in 3 seconds.' + bcolors.ENDC)
+        time.sleep(2)
+        print('3')
+        time.sleep(1)
+        print('2')
+        time.sleep(1)
+        print('1')
+        time.sleep(1)
+        x = 1
 
     selection = input()
 
@@ -41,8 +53,11 @@ while x < 1:
         time.sleep(2)
         add1 = input('Enter the first number to add: ')
         add2 = input('Enter the second number to add: ')
-        addtotal = int(add1) + int(add2)
-        print(str(addtotal) + ' is the total.')
+        try:
+            addtotal = float(add1) + float(add2)
+            print(str(addtotal) + ' is the total.')
+        except:
+            print(errormessage())
         time.sleep(2)
     
     elif selection == '2' or selection == 'subtraction' or selection == 'subtract' or selection == 'Subtraction' or selection == 'Subtract':
@@ -52,8 +67,11 @@ while x < 1:
         time.sleep(2)
         sub1 = input('Enter the first number to subtract: ')
         sub2 = input('Enter the second number to subtract: ')
-        subtotal = int(sub1) - int(sub2)
-        print(str(subtotal) + ' is the total.')
+        try:
+            subtotal = float(sub1) - float(sub2)
+            print(str(subtotal) + ' is the total.')
+        except:
+            print(errormessage())
         time.sleep(2)
 
     elif selection == '3' or selection == 'multiplication' or selection == 'multiply' or selection == 'Multiplication' or selection == 'Multiply':
@@ -63,8 +81,11 @@ while x < 1:
         time.sleep(2)
         mul1 = input('Enter the first number to multiply: ')
         mul2 = input('Enter the second number to multiply: ')
-        multotal = int(mul1) * int(mul2)
-        print(str(multotal) + ' is the total.')
+        try:
+            multotal = float(mul1) * float(mul2)
+            print(str(multotal) + ' is the total.')
+        except:
+            print(errormessage())
         time.sleep(2)
 
     elif selection == '4' or selection == 'division' or selection == 'divide' or selection == 'Division' or selection == 'Divide':
@@ -74,8 +95,11 @@ while x < 1:
         time.sleep(2)
         div1 = input('Enter the first number to divide: ')
         div2 = input('Enter the second number to divide: ')
-        divtotal = int(div1) / int(div2)
-        print(str(divtotal) + ' is the total.')
+        try:
+            divtotal = float(div1) / float(div2)
+            print(str(divtotal) + ' is the total.')
+        except:
+            print(errormessage())
         time.sleep(2)
 
     elif selection == '5' or selection == 'quit' or selection == 'Quit' or selection == 'godieinahole':
@@ -112,6 +136,7 @@ while x < 1:
         puns = ['Some mathematicians are reluctant to cosine a loan.', 'I was kicked out of math class for one too many infractions.', 'A mathematician that couldnt stop adding up recently went incremental.', 'I used to hate math but then I realised decimals have a point.', 'I didnt understand the math, so the teacher summed it up for me.', 'What do organic mathematicians throw into their fireplaces? Natural Logs.', 'In high school I recall having a beautiful but difficult math teacher. She was easy on the eyes and hard on the pupils!', 'Mathematicians are sum worshippers.', 'I strongly dislike the subject of math however I am partial to fractions.', 'You know what happens after you miss math class? It starts adding up.']
         print(random.choice(puns))
         time.sleep(2)
+#puns courtesy of calculushumor.com
 
     elif selection == 'secretpun' or selection == 'secret' or selection == 'easteregg':
         print('You found the secret! ' + bcolors.HEADER + 'CONGRATS!!' + bcolors.ENDC)
@@ -122,12 +147,4 @@ while x < 1:
         time.sleep(2)
 
     else:
-        print(bcolors.FAIL + 'Because you didnt make a correct selection, this program will self-destruct in 3 seconds.' + bcolors.ENDC)
-        time.sleep(2)
-        print('3')
-        time.sleep(1)
-        print('2')
-        time.sleep(1)
-        print('1')
-        time.sleep(1)
-        x = 1
+        print(errormessage())
