@@ -1,6 +1,8 @@
 import time
 import random
 
+#VERSION 1.0
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -20,31 +22,32 @@ def print_slow(str):
         time.sleep(.1)
 #i didnt end up using this but i might add it in later so I left it
 
+def errormessage():
+    global x
+    print(bcolors.FAIL + bcolors.UNDERLINE + 'Because you did something wrong, this program will self-destruct in 3 seconds.' + bcolors.ENDC)
+    time.sleep(2)
+    print('3')
+    time.sleep(1)
+    print('2')
+    time.sleep(1)
+    print('1')
+    time.sleep(1)
+    x = 1
+
 while x < 1:
     #print(' ')
     print(' ')
-    print(bcolors.OKBLUE + bcolors.BOLD + 'Selections:' + bcolors.ENDC)
-    print(bcolors.BOLD + '1.' + bcolors.ENDC +  ' Addition')
-    print(bcolors.BOLD + '2.' + bcolors.ENDC + ' Subtraction')
-    print(bcolors.BOLD + '3.' + bcolors.ENDC + ' Multiplication')
-    print(bcolors.BOLD + '4.' + bcolors.ENDC + ' Division')
-    print(bcolors.BOLD + '5.' + bcolors.ENDC + ' Quit')
-    print(bcolors.BOLD + '6.' + bcolors.ENDC + ' Lets have some fun with a math pun!')
+    print(bcolors.OKBLUE + bcolors.BOLD + bcolors.UNDERLINE + 'Selections:' + bcolors.ENDC)
+    print('1.' + ' Addition')
+    print('2.' + ' Subtraction')
+    print('3.' + ' Multiplication')
+    print('4.' + ' Division')
+    print('5.' + ' Quit')
+    print('6.' + ' Lets have some fun with a math pun!')
     print(' ')
     #print(' ')
-    
-    def errormessage():
-        print(bcolors.FAIL + 'Because you did something wrong, this program will self-destruct in 3 seconds.' + bcolors.ENDC)
-        time.sleep(2)
-        print('3')
-        time.sleep(1)
-        print('2')
-        time.sleep(1)
-        print('1')
-        time.sleep(1)
-        x = 1
 
-    selection = input()
+    selection = input('What should we do today? ')
 
     if selection == '1' or selection == 'addition' or selection == 'add' or selection == 'Addition' or selection == 'Add':
         #addition
@@ -57,13 +60,13 @@ while x < 1:
             addtotal = float(add1) + float(add2)
             print(str(addtotal) + ' is the total.')
         except:
-            print(errormessage())
+            errormessage()
         time.sleep(2)
     
     elif selection == '2' or selection == 'subtraction' or selection == 'subtract' or selection == 'Subtraction' or selection == 'Subtract':
         #subtraction
         time.sleep(1)
-        print('You selected subtraction. The only reason this is here is because Mr. Kelley said I cant make the user add a negative number because I didnt put in a subtraction option. You should thank him.')
+        print('You selected subtraction. Mr. Kelley made me put in the subtraction option even though I didnt want to.')
         time.sleep(2)
         sub1 = input('Enter the first number to subtract: ')
         sub2 = input('Enter the second number to subtract: ')
@@ -71,7 +74,7 @@ while x < 1:
             subtotal = float(sub1) - float(sub2)
             print(str(subtotal) + ' is the total.')
         except:
-            print(errormessage())
+            errormessage()
         time.sleep(2)
 
     elif selection == '3' or selection == 'multiplication' or selection == 'multiply' or selection == 'Multiplication' or selection == 'Multiply':
@@ -85,7 +88,7 @@ while x < 1:
             multotal = float(mul1) * float(mul2)
             print(str(multotal) + ' is the total.')
         except:
-            print(errormessage())
+            errormessage()
         time.sleep(2)
 
     elif selection == '4' or selection == 'division' or selection == 'divide' or selection == 'Division' or selection == 'Divide':
@@ -99,7 +102,7 @@ while x < 1:
             divtotal = float(div1) / float(div2)
             print(str(divtotal) + ' is the total.')
         except:
-            print(errormessage())
+            errormessage()
         time.sleep(2)
 
     elif selection == '5' or selection == 'quit' or selection == 'Quit' or selection == 'godieinahole':
